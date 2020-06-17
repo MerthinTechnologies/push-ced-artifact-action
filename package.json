@@ -4,8 +4,7 @@
   "description": "Github Action to push a CloudEdgeDistribution artifact.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -r ./lib && rm -r node_modules"
+    "build": "tsc && ncc build ./lib/index.js"
   },
   "author": "Merthin Technologies",
   "license": "ISC",
@@ -15,6 +14,7 @@
   },
   "devDependencies": {
     "@types/node": "^13.1.2",
+    "@zeit/ncc": "^0.22.3",
     "typescript": "^3.7.4"
   }
 }
