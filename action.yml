@@ -5,13 +5,13 @@ inputs:
     description: 'CloudEdgeDistribution CLI token'
     required: true
   environment:
-    description: 'Environment to use in CloudEdgeDistribution, it'll use the default environment in ced.json if it isn't specified.'
+    description: "Environment to use in CloudEdgeDistribution, it'll use the default environment in ced.json if it isn't specified."
     required: false
   version:
-    description: 'A version name where to push the artifact. A new version will be created if it isn't specified.'
+    description: "A version name where to push the artifact. A new version will be created if it isn't specified."
     required: false
   push-as-draft:
-    description: 'Push artifact as draft. The version will be published after pushing artifact if it isn't specified.'
+    description: "Push artifact as draft. The version will be published after pushing artifact if it isn't specified."
     required: false
   path:
     description: 'Path to the CloudEdgeDistribution project, default is current folder.'
