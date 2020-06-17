@@ -2,10 +2,10 @@ name: 'Push CED artifact'
 description: 'Github Action to push a CloudEdgeDistribution artifact'
 inputs:
   cli-token:
-    description: 'CloudEdgeDistribution CLI token'
-    required: true
+    description: "CloudEdgeDistribution CLI token. If not specified it'll try to resolve the CLI token from environment variable CED_CLI_TOKEN."
+    required: false
   environment:
-    description: "Environment to use in CloudEdgeDistribution, it'll use the default environment in ced.json if it isn't specified."
+    description: "Environment to use in CloudEdgeDistribution. If not specified it'll try to resolve it from environment variable CED_ENVIRONMENT, it'll use the default environment in ced.json otherwise."
     required: false
   version:
     description: "A version name where to push the artifact. A new version will be created if it isn't specified."
@@ -14,7 +14,7 @@ inputs:
     description: "Push artifact as draft. The version will be published after pushing artifact if it isn't specified."
     required: false
   path:
-    description: 'Path to the CloudEdgeDistribution project, default is current folder.'
+    description: "Path to the CloudEdgeDistribution project. If not specified it'll try to resolve it from environment variable CED_PROJECT_PATH, it'll use current folder otherwise."
     required: false
 runs:
   using: 'node12'

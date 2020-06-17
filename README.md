@@ -6,11 +6,11 @@ Github Action to push a CloudEdgeDistribution artifact.
 
 ### `cli-token`
 
-**Required** CloudEdgeDistribution CLI token. Use `ced login --ci` to obtain a CLI token.
+CloudEdgeDistribution CLI token. If not specified it'll try to resolve the CLI token from environment variable `CED_CLI_TOKEN`.
 
 ### `environment`
 
-Environment to use in CloudEdgeDistribution, if not specified will use the default environment in ced.json
+Environment to use in CloudEdgeDistribution. If not specified it'll try to resolve it from environment variable `CED_ENVIRONMENT`, it'll use the default environment in ced.json otherwise.
 
 ### `version`
 
@@ -22,7 +22,7 @@ Push artifact as draft. The version will be published after pushing artifact if 
 
 ### `path`
 
-Path to the CloudEdgeDistribution project, default is current folder.
+Path to the CloudEdgeDistribution project. If not specified it'll try to resolve it from environment variable `CED_PROJECT_PATH`, it'll use current folder otherwise.
 
 ## Example usage
 
