@@ -24,7 +24,6 @@ Push artifact as draft. The version will be published after pushing artifact if 
 
 ```yaml
 - uses: MerthinTechnologies/push-ced-artifact@v1
-  id: create-version
   with:
     cli-token: ${{ secrets.CED_CLI_TOKEN }}
     environment: 'production'
