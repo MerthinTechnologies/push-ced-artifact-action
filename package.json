@@ -2,9 +2,9 @@
   "name": "push-ced-artifact-action",
   "version": "1.0.0",
   "description": "Github Action to push a CloudEdgeDistribution artifact.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && ncc build ./lib/index.js"
+    "build": "tsc && ncc build ./js/index.js"
   },
   "author": "Merthin Technologies",
   "license": "ISC",
