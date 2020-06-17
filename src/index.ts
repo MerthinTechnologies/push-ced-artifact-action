@@ -9,6 +9,12 @@ const run = async function() {
     const pushAsDraft = !!core.getInput('push-as-draft') 
       ? core.getInput('push-as-draft').toLowerCase() !== 'false'
       : false;
+    const path = core.getInput('path');
+
+    if (path) {
+      process.chdir(path);
+    }
+
     const command = new PushCommandHandler(cliToken);
     await command.run(environment, version, pushAsDraft);
   } catch (error) {

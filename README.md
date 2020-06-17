@@ -20,11 +20,16 @@ A version name where to push the artifact. A new version will be created if it i
 
 Push artifact as draft. The version will be published after pushing artifact if it isn't specified.
 
+### `path`
+
+Path to the CloudEdgeDistribution project, default is current folder.
+
 ## Example usage
 
 ```yaml
 - uses: MerthinTechnologies/push-ced-artifact@v1
   with:
+    path: ${{ env.PROJECT_PATH }}
     cli-token: ${{ secrets.CED_CLI_TOKEN }}
     environment: 'production'
     version: ${{ env.VERSION }}
