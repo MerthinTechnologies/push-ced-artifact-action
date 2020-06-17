@@ -1,6 +1,6 @@
-# Create CED version
+# Push CED artifact
 
-Github Action to create an empty version within a CloudEdgeDistribution project.
+Github Action to push a CloudEdgeDistribution artifact.
 
 ## Inputs
 

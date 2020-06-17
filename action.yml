@@ -1,4 +1,4 @@
-name: 'Create CED version'
+name: 'Push CED artifact'
 description: 'Github Action to push a CloudEdgeDistribution artifact'
 inputs:
   cli-token:
