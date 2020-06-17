@@ -18,6 +18,7 @@ const run = async function() {
     const command = new PushCommandHandler(cliToken);
     await command.run(environment, version, pushAsDraft);
   } catch (error) {
+    console.log(error);
     core.setFailed(error.message);
   }
 }

@@ -11118,6 +11118,7 @@ const run = async function () {
         await command.run(environment, version, pushAsDraft);
     }
     catch (error) {
+        console.log(error);
         core.setFailed(error.message);
     }
 };
