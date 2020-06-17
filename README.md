@@ -27,7 +27,7 @@ Path to the CloudEdgeDistribution project, default is current folder.
 ## Example usage
 
 ```yaml
-- uses: MerthinTechnologies/push-ced-artifact@v1
+- uses: MerthinTechnologies/push-ced-artifact-action@v1
   with:
     path: ${{ env.PROJECT_PATH }}
     cli-token: ${{ secrets.CED_CLI_TOKEN }}
