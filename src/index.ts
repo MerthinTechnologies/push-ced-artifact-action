@@ -1,18 +1,10 @@
+import 'reflect-metadata';
 import * as core from '@actions/core';
-import { PushCommandHandler } from '@ced/cli';
+import cli, { GlobalErrorHandler } from '@ced/cli';
+
+GlobalErrorHandler.set();
 
 const run = async function () {
-  process.on('uncaughtException', (err) => {
-    console.log(err);
-    core.setFailed(err.message);
-    process.exit(1);
-  });
-
-  process.on('unhandledRejection', (err) => {
-    core.setFailed('Unhandled rejection');
-    process.exit(1);
-  });
-
   const cliToken = core.getInput('cli-token') || process.env['CED_CLI_TOKEN'];
   const environment =
     core.getInput('environment') || process.env['CED_ENVIRONMENT'];
@@ -37,11 +29,8 @@ const run = async function () {
     console.log(`Using ${path} as working directory`);
   }
 
-  const command = new PushCommandHandler(cliToken);
+  const command = cli(cliToken).push();
   await command.run(environment, version, pushAsDraft);
 };
 
-run().catch((error) => {
-  console.log(error);
-  core.setFailed(error.message);
-});
+run();
